@@ -1,0 +1,537 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simfumene Vumani Jiyane | ICT Portfolio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,300&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/11219e6bf6.js" crossorigin="anonymous"></script>
+    <!-- EmailJS SDK -->
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+</head>
+<body>
+
+<!-- =================== STICKY NAV (always on top) =================== -->
+<nav id="main-nav">
+    <div class="nav-inner">
+        <div class="logo-wrap">
+            <img src="pictures/logo1.png" class="logo" alt="Logo">
+        </div>
+        <ul id="sidemenu">
+            <li><a href="#header" onclick="closemenu()">Home</a></li>
+            <li><a href="#about" onclick="closemenu()">About</a></li>
+            <li><a href="#services" onclick="closemenu()">Services</a></li>
+            <li><a href="#Certificates" onclick="closemenu()">Certificates</a></li>
+            <li><a href="#portfolio" onclick="closemenu()">Portfolio</a></li>
+            <li><a href="#contact" onclick="closemenu()">Contact</a></li>
+            <i class="fa-solid fa-xmark" onclick="closemenu()"></i>
+        </ul>
+        <i class="fa-solid fa-bars" onclick="openmenu()"></i>
+    </div>
+</nav>
+
+<!-- =================== Header (fixed hero) =================== -->
+<div id="header">
+    <div class="hero-motion" aria-hidden="true">
+        <span class="motion-orbit orbit-one"></span>
+        <span class="motion-orbit orbit-two"></span>
+        <span class="motion-orbit orbit-three"></span>
+        <span class="motion-node node-one"></span>
+        <span class="motion-node node-two"></span>
+        <span class="motion-node node-three"></span>
+        <span class="code-stream stream-one">HTML CSS JS SQL</span>
+        <span class="code-stream stream-two">DATA API CLOUD</span>
+        <span class="code-stream stream-three">MOBILE WEB IOT</span>
+    </div>
+    <div class="noise-overlay"></div>
+    <div class="grid-overlay"></div>
+    <div class="container">
+        <div class="header-text">
+            <div class="badge">ICT Student &middot; DUT</div>
+            <h1>Hi, I'm <span class="accent">Simfumene</span><br>Vumani Jiyane</h1>
+            <p class="header-sub">Future Software Engineer &middot; Web &amp; Mobile Developer</p>
+            <div class="header-cta">
+                <a href="#portfolio" class="btn-primary">View My Work</a>
+                <a href="#contact" class="btn-ghost">Get In Touch</a>
+            </div>
+        </div>
+        <div class="scroll-indicator">
+            <div class="scroll-line"></div>
+            <span>Scroll</span>
+        </div>
+    </div>
+</div>
+
+<!-- =================== ABOUT =================== -->
+<div id="about">
+    <div class="container">
+        <div class="section-label">About</div>
+        <div class="row">
+            <div class="about-col-1">
+                <div class="photo-frame">
+                    <img src="pictures/myphoto1.jpeg" alt="Simfumene Jiyane">
+                    <div class="photo-accent"></div>
+                </div>
+            </div>
+            <div class="about-col-2">
+                <h1 class="sub-title">About Me</h1>
+                <p class="me">I am a final-year Bachelor of Information Communication Technology (ICT) student at Durban University of Technology with strong knowledge in software development, web development, databases, and problem solving. I am actively seeking a learnership, graduate programme, internship, or entry-level software engineering opportunity where I can keep learning, sharpen my skills, and contribute high-quality work. I am motivated, detail-oriented, and eager to grow as a future software developer and engineer.</p>
+
+                <div class="tab-titles">
+                    <p class="tab-links active-link" onclick="opentab('skills')">Skills</p>
+                    <p class="tab-links" onclick="opentab('education')">Education</p>
+                </div>
+
+                <div class="tab-contents active-tab" id="skills">
+                    <div class="skills-dashboard">
+                        <article class="skill-card">
+                            <div class="skill-top">
+                                <div class="skill-logo python"><i class="fa-brands fa-python"></i></div>
+                                <div>
+                                    <h3>Python</h3>
+                                    <span>Flask, logic, backend basics</span>
+                                </div>
+                                <strong>82%</strong>
+                            </div>
+                            <div class="skill-meter"><span style="--level:82%"></span></div>
+                        </article>
+
+                        <article class="skill-card">
+                            <div class="skill-top">
+                                <div class="skill-logo java"><i class="fa-brands fa-java"></i></div>
+                                <div>
+                                    <h3>Java</h3>
+                                    <span>Android Studio and OOP</span>
+                                </div>
+                                <strong>78%</strong>
+                            </div>
+                            <div class="skill-meter"><span style="--level:78%"></span></div>
+                        </article>
+
+                        <article class="skill-card">
+                            <div class="skill-top">
+                                <div class="skill-logo html"><i class="fa-brands fa-html5"></i></div>
+                                <div>
+                                    <h3>HTML</h3>
+                                    <span>Semantic, responsive pages</span>
+                                </div>
+                                <strong>88%</strong>
+                            </div>
+                            <div class="skill-meter"><span style="--level:88%"></span></div>
+                        </article>
+
+                        <article class="skill-card">
+                            <div class="skill-top">
+                                <div class="skill-logo css"><i class="fa-brands fa-css3-alt"></i></div>
+                                <div>
+                                    <h3>CSS</h3>
+                                    <span>Layouts, animation, UI polish</span>
+                                </div>
+                                <strong>84%</strong>
+                            </div>
+                            <div class="skill-meter"><span style="--level:84%"></span></div>
+                        </article>
+
+                        <article class="skill-card">
+                            <div class="skill-top">
+                                <div class="skill-logo js"><i class="fa-brands fa-js"></i></div>
+                                <div>
+                                    <h3>JavaScript</h3>
+                                    <span>DOM, interactions, forms</span>
+                                </div>
+                                <strong>76%</strong>
+                            </div>
+                            <div class="skill-meter"><span style="--level:76%"></span></div>
+                        </article>
+
+                        <article class="skill-card">
+                            <div class="skill-top">
+                                <div class="skill-logo sql"><i class="fa-solid fa-database"></i></div>
+                                <div>
+                                    <h3>SQL</h3>
+                                    <span>Databases and queries</span>
+                                </div>
+                                <strong>74%</strong>
+                            </div>
+                            <div class="skill-meter"><span style="--level:74%"></span></div>
+                        </article>
+                    </div>
+                </div>
+                <div class="tab-contents" id="education">
+                    <div class="education-timeline">
+                        <article class="education-card">
+                            <div class="education-year">2024 &ndash; Current</div>
+                            <div class="education-body">
+                                <h3>Bachelor of ICT</h3>
+                                <p>Durban University of Technology</p>
+                                <span>Software development, databases, web systems, problem solving, and ICT fundamentals.</span>
+                            </div>
+                        </article>
+                        <article class="education-card">
+                            <div class="education-year">2023</div>
+                            <div class="education-body">
+                                <h3>Matric Completed</h3>
+                                <p>National Senior Certificate</p>
+                                <span>Built the academic foundation for my ICT and software engineering path.</span>
+                            </div>
+                        </article>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- =================== SERVICES =================== -->
+<div id="services">
+    <div class="container">
+        <div class="section-label">Services</div>
+        <h1 class="sub-title">My Services</h1>
+        <div class="services-list">
+            <div class="service-card">
+                <div class="service-icon"><i class="fa-solid fa-code"></i></div>
+                <h2>Web Application</h2>
+                <p>Designing and building responsive, user-friendly web applications with clean front-end code and solid back-end logic.</p>
+                <a href="service-web.html" class="service-link">Learn more <i class="fa-solid fa-arrow-right"></i></a>
+            </div>
+            
+            <div class="service-card">
+                <div class="service-icon"><i class="fa-brands fa-app-store"></i></div>
+                <h2>Mobile Application</h2>
+                <p>Creating functional Android mobile apps that deliver smooth user experiences and solve real-world problems.</p>
+                <a href="service-mobile.html" class="service-link">Learn more <i class="fa-solid fa-arrow-right"></i></a>
+            </div>
+
+            <div class="service-card">
+                <div class="service-icon"><i class="fa-solid fa-layer-group"></i></div>
+                <h2>Full-Stack Web Application</h2>
+                <p>Building complete web systems with front-end interfaces, database structure, authentication flow, and back-end logic.</p>
+                <a href="service-web.html" class="service-link">Learn more <i class="fa-solid fa-arrow-right"></i></a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- =================== CERTIFICATES =================== -->
+<div id="Certificates">
+    <div class="container">
+        <div class="section-label">Credentials</div>
+        <div class="section-heading-row">
+            <div>
+                <h1 class="sub-title">My Certificates</h1>
+                <p class="section-kicker">Career-focused learning that supports my ICT degree, software development skills, and interest in data, IoT, and modern digital systems.</p>
+            </div>
+            <a href="certificates.html" class="btn-certificates">
+                <i class="fa-solid fa-certificate"></i>
+                View Details
+                <i class="fa-solid fa-arrow-right"></i>
+            </a>
+        </div>
+
+        <div class="certificates-list">
+            <article class="certificate-card">
+                <div class="certificate-icon"><i class="fa-solid fa-chart-line"></i></div>
+                <div class="certificate-content">
+                    <span class="certificate-issuer">Cisco Networking Academy</span>
+                    <h2>Introduction to Data Science</h2>
+                    <p>Data analytics, AI and Machine Learning concepts, and data-driven career foundations.</p>
+                    <div class="certificate-tags">
+                        <span>Data Science</span>
+                        <span>AI &amp; ML</span>
+                        <span>Analytics</span>
+                    </div>
+                </div>
+                <a href="certificates/IntrotoDataScienceUpdate20260424-31-xjz98z.pdf" class="certificate-action" target="_blank" rel="noopener" aria-label="Open Introduction to Data Science certificate">
+                    <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                </a>
+            </article>
+
+            <article class="certificate-card">
+                <div class="certificate-icon"><i class="fa-solid fa-microchip"></i></div>
+                <div class="certificate-content">
+                    <span class="certificate-issuer">Cisco Networking Academy</span>
+                    <h2>Introduction to Internet of Things</h2>
+                    <p>IoT, digital transformation, automation, networking, software, data, and digital security.</p>
+                    <div class="certificate-tags">
+                        <span>IoT</span>
+                        <span>Automation</span>
+                        <span>Security</span>
+                    </div>
+                </div>
+                <a href="certificates/IoT_Certificate.pdf" class="certificate-action" target="_blank" rel="noopener" aria-label="Open Introduction to Internet of Things certificate">
+                    <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                </a>
+            </article>
+        </div>
+    </div>
+</div>
+
+<!-- =================== PORTFOLIO =================== -->
+<div id="portfolio">
+    <div class="container">
+        <div class="section-label">Portfolio</div>
+        <div class="section-heading-row">
+            <div>
+                <h1 class="sub-title">My Work</h1>
+                <p class="section-kicker">Selected ICT projects showing practical web, mobile, and interactive application development.</p>
+            </div>
+        </div>
+        <div class="work-list">
+            <div class="work">
+                <img src="pictures/conference-call-global-communication-connection-technology-concept.jpg" alt="Web App Project" loading="lazy">
+                <div class="layer">
+                    <div class="layer-tag">Project 01</div>
+                    <h3>Web App</h3>
+                    <p>A collaborative group project focused on building a full-stack web application with real-world functionality.</p>
+                    <div class="work-stack">
+                        <span>HTML</span>
+                        <span>CSS</span>
+                        <span>JavaScript</span>
+                        <span>Backend Logic</span>
+                    </div>
+                    <a href="#"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                </div>
+            </div>
+            <div class="work">
+                <img src="pictures/close-up-hand-holding-phone.jpg" alt="Mobile App Project" loading="lazy">
+                <div class="layer">
+                    <div class="layer-tag">Project 02</div>
+                    <h3>Mobile App</h3>
+                    <p>Android mobile application developed to address practical user needs with a clean, intuitive interface.</p>
+                    <div class="work-stack">
+                        <span>Java</span>
+                        <span>XML</span>
+                        <span>Android Studio</span>
+                    </div>
+                    <a href="#"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                </div>
+            </div>
+            <div class="work">
+                <img src="pictures/blog-like-macbook-community-your-marketing.jpg" alt="Full-Stack Web Project" loading="lazy">
+                <div class="layer">
+                    <div class="layer-tag">Project 03</div>
+                    <h3>Full-Stack Web App</h3>
+                    <p>A web-based system concept focused on practical user workflows, clean interfaces, and database-driven features.</p>
+                    <div class="work-stack">
+                        <span>Python</span>
+                        <span>Flask</span>
+                        <span>SQL</span>
+                        <span>Dashboard UI</span>
+                    </div>
+                    <a href="#"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                </div>
+            </div>
+        </div>
+        <a href="#" class="btn">See More Work</a>
+    </div>
+</div>
+
+<!-- =================== CONTACT =================== -->
+<div id="contact">
+    <div class="container">
+        <div class="section-label">Contact</div>
+        <div class="row">
+            <div class="contact-left">
+                <h1 class="sub-title">Contact Me</h1>
+                <p class="contact-intro">Have a project in mind or want to connect? Drop me a message. I'm always open to opportunities.</p>
+                <div class="contact-info">
+                    <p><i class="fa-solid fa-envelope"></i>simfumenenzuza19@gmail.com</p>
+                    <p><i class="fa-solid fa-phone"></i>064 671 0733</p>
+                    <p><i class="fa-solid fa-location-dot"></i>KwaZulu-Natal, Nkandla</p>
+                </div>
+                <div class="social-icons">
+                    <a href="" aria-label="Facebook"><i class="fa-brands fa-facebook"></i></a>
+                    <a href="" aria-label="LinkedIn"><i class="fa-brands fa-linkedin"></i></a>
+                    <a href="https://www.instagram.com/simfumene_nzuza?igsh=NDFicWkwam41cGk=" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+                    <a href="https://github.com/SimfumeneJiyane19" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
+                </div>
+                <a href="" download class="btn btn2">
+                    <i class="fa-solid fa-download"></i> Download CV
+                </a>
+            </div>
+            <div class="contact-right">
+                <form id="contact-form">
+                    <div class="form-group">
+                        <input type="text" id="from_name" name="from_name" placeholder="Your Name" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="email" id="from_email" name="from_email" placeholder="Your Email" required>
+                    </div>
+                    <div class="form-group">
+                        <textarea id="message" name="message" rows="6" placeholder="Your Message" required></textarea>
+                    </div>
+                    <button type="submit" class="btn btn2" id="submit-btn">
+                        <span id="btn-text">Send Message</span>
+                        <i class="fa-solid fa-paper-plane" id="btn-icon"></i>
+                    </button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- SUCCESS POPUP -->
+    <div id="success-popup" class="popup-overlay">
+        <div class="popup-box">
+            <div class="popup-icon"><i class="fa-solid fa-circle-check"></i></div>
+            <h3>Message Sent!</h3>
+            <p>Thanks for reaching out. I'll get back to you as soon as possible.</p>
+            <button onclick="closePopup()" class="popup-close-btn">Close</button>
+        </div>
+    </div>
+
+    <!-- ERROR POPUP -->
+    <div id="error-popup" class="popup-overlay">
+        <div class="popup-box popup-box--error">
+            <div class="popup-icon error"><i class="fa-solid fa-circle-exclamation"></i></div>
+            <h3>Oops!</h3>
+            <p>Something went wrong. Please try emailing me directly at simfumenenzuza19@gmail.com</p>
+            <button onclick="closeErrorPopup()" class="popup-close-btn">Close</button>
+        </div>
+    </div>
+
+    <div class="copy-right">
+        <p>Copyright <i class="fa-regular fa-copyright"></i> Simfumene Jiyane &middot; Built with <i class="fas fa-heart"></i> in Durban</p>
+    </div>
+</div>
+
+<!-- =================== SCRIPTS =================== -->
+<script>
+    var tablinks = document.getElementsByClassName("tab-links");
+    var tabcontents = document.getElementsByClassName("tab-contents");
+
+    function opentab(tabname) {
+        for (var tablink of tablinks) { tablink.classList.remove("active-link"); }
+        for (var tabcontent of tabcontents) { tabcontent.classList.remove("active-tab"); }
+        event.currentTarget.classList.add("active-link");
+        document.getElementById(tabname).classList.add("active-tab");
+    }
+
+    // ---- Mobile Menu ----
+    var sidemenu = document.getElementById("sidemenu");
+    function openmenu() {
+        sidemenu.style.right = "0";
+        document.body.classList.add("menu-open");
+    }
+    function closemenu() {
+        sidemenu.style.right = "-220px";
+        document.body.classList.remove("menu-open");
+    }
+
+    // ---- Nav scroll effect ----
+    window.addEventListener('scroll', () => {
+        const nav = document.getElementById('main-nav');
+        nav.classList.toggle('scrolled', window.scrollY > 60);
+        document.getElementById('header').classList.toggle('is-paused', window.scrollY > window.innerHeight * 0.65);
+    });
+
+    // ---- EmailJS Setup ----
+    emailjs.init("nmEq1lOvPJEJOfmtf");
+
+    document.getElementById("contact-form").addEventListener("submit", function(e) {
+        e.preventDefault();
+
+        const btn = document.getElementById("submit-btn");
+        const btnText = document.getElementById("btn-text");
+        btn.disabled = true;
+        btnText.textContent = "Sending...";
+
+        const templateParams = {
+            from_name:  document.getElementById("from_name").value,
+            from_email: document.getElementById("from_email").value,
+            message:    document.getElementById("message").value,
+            to_name:    "Simfumene"
+        };
+        emailjs.send(
+            "service_901zq8i",
+            "template_s20vqc7",
+            templateParams
+        ).then(function() {
+            document.getElementById("success-popup").classList.add("active");
+            document.getElementById("contact-form").reset();
+            btn.disabled = false;
+            btnText.textContent = "Send Message";
+        }, function(error) {
+            console.error("EmailJS error:", error);
+            document.getElementById("error-popup").classList.add("active");
+            btn.disabled = false;
+            btnText.textContent = "Send Message";
+        });
+    });
+
+    function closePopup() {
+        document.getElementById("success-popup").classList.remove("active");
+    }
+    function closeErrorPopup() {
+        document.getElementById("error-popup").classList.remove("active");
+    }
+
+    document.querySelectorAll('.popup-overlay').forEach(overlay => {
+        overlay.addEventListener('click', function(e) {
+            if (e.target === this) { this.classList.remove("active"); }
+        });
+    });
+
+    // ---- Scroll reveal ----
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('revealed');
+                observer.unobserve(entry.target);
+            }
+        });
+    }, { threshold: 0.1 });
+
+    document.querySelectorAll('.service-card, .certificate-card, .work, .about-col-1, .about-col-2').forEach(el => {
+        el.classList.add('reveal');
+        observer.observe(el);
+    });
+
+    // ---- Interactive hero background ----
+    const hero = document.getElementById('header');
+    const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+
+    if (hero && !reduceMotion.matches) {
+        let animationFrame = null;
+        let nextPoint = null;
+
+        const updateHeroMotion = (x, y) => {
+            const rect = hero.getBoundingClientRect();
+            const pointerX = Math.max(0, Math.min(1, (x - rect.left) / rect.width));
+            const pointerY = Math.max(0, Math.min(1, (y - rect.top) / rect.height));
+            const driftX = (pointerX - 0.5).toFixed(3);
+            const driftY = (pointerY - 0.5).toFixed(3);
+
+            hero.style.setProperty('--pointer-x', `${(pointerX * 100).toFixed(2)}%`);
+            hero.style.setProperty('--pointer-y', `${(pointerY * 100).toFixed(2)}%`);
+            hero.style.setProperty('--drift-x', driftX);
+            hero.style.setProperty('--drift-y', driftY);
+        };
+
+        const queueHeroMotion = (event) => {
+            nextPoint = { x: event.clientX, y: event.clientY };
+            if (animationFrame) return;
+
+            animationFrame = requestAnimationFrame(() => {
+                updateHeroMotion(nextPoint.x, nextPoint.y);
+                animationFrame = null;
+            });
+        };
+
+        window.addEventListener('pointermove', queueHeroMotion, { passive: true });
+        window.addEventListener('mousemove', queueHeroMotion, { passive: true });
+
+        hero.addEventListener('pointerleave', () => {
+            hero.style.setProperty('--pointer-x', '50%');
+            hero.style.setProperty('--pointer-y', '50%');
+            hero.style.setProperty('--drift-x', '0');
+            hero.style.setProperty('--drift-y', '0');
+        });
+    }
+</script>
+</body>
+</html>
