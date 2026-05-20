@@ -132,7 +132,7 @@
         .certs-section { padding: 80px 0; }
         .certs-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            grid-template-columns: repeat(2, minmax(0, 1fr));
             gap: 24px;
             margin-top: 48px;
         }
@@ -329,7 +329,7 @@
 
         <div class="stats-bar">
             <div class="stat">
-                <span class="stat-num">2</span>
+                <span class="stat-num">3</span>
                 <span class="stat-label">Certificates Earned</span>
             </div>
             <div class="stat">
@@ -443,6 +443,39 @@
                     <div class="cert-footer">
                         <span class="cert-date">
                             <i class="fa-regular fa-calendar"></i> April 07, 2026
+                        </span>
+                        <span class="cert-badge">
+                            <i class="fa-solid fa-check"></i> Completed
+                        </span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Certificate 4: Cisco JavaScript Essentials 1 -->
+            <div class="cert-card">
+                <div class="cert-bar cisco"></div>
+                <div class="cert-body">
+                    <div class="cert-issuer">
+                        <i class="fa-solid fa-network-wired"></i> Cisco Networking Academy
+                    </div>
+                    <h3 class="cert-title">JavaScript Essentials 1</h3>
+                    <p class="cert-desc">Built practical JavaScript foundations, including syntax, variables, control flow, functions, and the programming logic used in interactive web development.</p>
+                    <div class="cert-skills">
+                        <span class="cert-skill">JavaScript</span>
+                        <span class="cert-skill">Programming</span>
+                        <span class="cert-skill">Web Development</span>
+                        <span class="cert-skill">Cisco</span>
+                    </div>
+                    <!-- Embedded PDF -->
+                    <div class="cert-pdf-wrap">
+                        <iframe src="certificates/JavaScriptEssentials1.pdf" class="cert-pdf" title="Cisco JavaScript Essentials 1 Certificate"></iframe>
+                        <a href="certificates/JavaScriptEssentials1.pdf" download class="cert-download-btn">
+                            <i class="fa-solid fa-download"></i> Download Certificate
+                        </a>
+                    </div>
+                    <div class="cert-footer">
+                        <span class="cert-date">
+                            <i class="fa-regular fa-calendar"></i> 2026
                         </span>
                         <span class="cert-badge">
                             <i class="fa-solid fa-check"></i> Completed
