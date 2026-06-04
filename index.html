@@ -7,11 +7,12 @@
     <title>Simfumene Vumani Jiyane | ICT Portfolio</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://cdn.jsdelivr.net">
     <link href="https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,300&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
-    <script src="https://kit.fontawesome.com/11219e6bf6.js" crossorigin="anonymous"></script>
+    <script src="https://kit.fontawesome.com/11219e6bf6.js" crossorigin="anonymous" defer></script>
     <!-- EmailJS SDK -->
-    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js" defer></script>
 </head>
 <body>
 
@@ -19,7 +20,10 @@
 <nav id="main-nav">
     <div class="nav-inner">
         <div class="logo-wrap">
-            <img src="pictures/logo1.png" class="logo" alt="Logo">
+            <picture>
+                <source srcset="pictures/logo1.webp" type="image/webp">
+                <img src="pictures/logo1.png" class="logo" alt="Logo" width="120" height="80" decoding="async">
+            </picture>
         </div>
         <ul id="sidemenu">
             <li><a href="#header" onclick="closemenu()">Home</a></li>
@@ -73,7 +77,10 @@
         <div class="row">
             <div class="about-col-1">
                 <div class="photo-frame">
-                    <img src="pictures/new pic .jpeg" alt="Simfumene Jiyane">
+                    <picture>
+                        <source srcset="pictures/new-pic-profile.webp" type="image/webp">
+                        <img src="pictures/new pic .jpeg" alt="Simfumene Jiyane" width="720" height="960" loading="lazy" decoding="async">
+                    </picture>
                     <div class="photo-accent"></div>
                 </div>
             </div>
@@ -299,7 +306,10 @@
         </div>
         <div class="work-list featured-work-list">
             <div class="work featured-work">
-                <img src="pictures/Screenshot 2026-05-25 212042.png " alt="DUT WIL Management System project screenshot" loading="lazy">
+                <picture>
+                    <source srcset="pictures/dut-wil-screenshot.webp" type="image/webp">
+                    <img src="pictures/Screenshot 2026-05-25 212042.png" alt="DUT WIL Management System project screenshot" width="1100" height="518" loading="lazy" decoding="async">
+                </picture>
                 <div class="layer">
                     <div class="layer-tag">Featured Project</div>
                     <h3>DUT WIL Management System</h3>
@@ -419,37 +429,43 @@
         document.getElementById('header').classList.toggle('is-paused', window.scrollY > window.innerHeight * 0.65);
     });
 
-    // ---- EmailJS Setup ----
-    emailjs.init("nmEq1lOvPJEJOfmtf");
+    document.addEventListener("DOMContentLoaded", function() {
+        if (typeof emailjs === "undefined") {
+            console.warn("EmailJS failed to load; contact form submission is disabled.");
+            return;
+        }
 
-    document.getElementById("contact-form").addEventListener("submit", function(e) {
-        e.preventDefault();
+        emailjs.init("nmEq1lOvPJEJOfmtf");
 
-        const btn = document.getElementById("submit-btn");
-        const btnText = document.getElementById("btn-text");
-        btn.disabled = true;
-        btnText.textContent = "Sending...";
+        document.getElementById("contact-form").addEventListener("submit", function(e) {
+            e.preventDefault();
 
-        const templateParams = {
-            from_name:  document.getElementById("from_name").value,
-            from_email: document.getElementById("from_email").value,
-            message:    document.getElementById("message").value,
-            to_name:    "Simfumene"
-        };
-        emailjs.send(
-            "service_901zq8i",
-            "template_s20vqc7",
-            templateParams
-        ).then(function() {
-            document.getElementById("success-popup").classList.add("active");
-            document.getElementById("contact-form").reset();
-            btn.disabled = false;
-            btnText.textContent = "Send Message";
-        }, function(error) {
-            console.error("EmailJS error:", error);
-            document.getElementById("error-popup").classList.add("active");
-            btn.disabled = false;
-            btnText.textContent = "Send Message";
+            const btn = document.getElementById("submit-btn");
+            const btnText = document.getElementById("btn-text");
+            btn.disabled = true;
+            btnText.textContent = "Sending...";
+
+            const templateParams = {
+                from_name:  document.getElementById("from_name").value,
+                from_email: document.getElementById("from_email").value,
+                message:    document.getElementById("message").value,
+                to_name:    "Simfumene"
+            };
+            emailjs.send(
+                "service_901zq8i",
+                "template_s20vqc7",
+                templateParams
+            ).then(function() {
+                document.getElementById("success-popup").classList.add("active");
+                document.getElementById("contact-form").reset();
+                btn.disabled = false;
+                btnText.textContent = "Send Message";
+            }, function(error) {
+                console.error("EmailJS error:", error);
+                document.getElementById("error-popup").classList.add("active");
+                btn.disabled = false;
+                btnText.textContent = "Send Message";
+            });
         });
     });
 
