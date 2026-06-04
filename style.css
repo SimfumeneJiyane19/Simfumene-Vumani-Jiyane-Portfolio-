@@ -101,7 +101,6 @@ body {
     justify-content: space-between;
 }
 .logo-wrap { display: flex; align-items: center; }
-.logo-wrap picture { display: flex; align-items: center; }
 .logo { width: 120px; filter: brightness(1.15) contrast(1.05); }
 
 #main-nav ul { display: flex; list-style: none; gap: 4px; }
